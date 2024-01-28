@@ -8,7 +8,7 @@ export const FAQContainer = styled.div`
     background: grey;
     & .faq-heading {
         width: 99.8%;
-        background: antiquewhite;
+        background: #0C2D57;
         border: 1px solid brown;
         position: sticky;
         top:0;
@@ -33,6 +33,8 @@ export const FAQCard = styled.div`
         display: flex;
         width: 100%;
         background: #ffebeb;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 24px;
         p {
             margin: 0;
             width: 100%;
@@ -51,5 +53,7 @@ export const FAQAnswerWrapper = styled.div`
     width: 100%;
     & .faq-answer {
         width: 100%;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 18px;
     }
 `;
