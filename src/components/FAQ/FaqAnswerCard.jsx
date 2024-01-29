@@ -1,8 +1,8 @@
 import React from 'react'
 
-function FaqAnswerCard({ faqAnswer, key }) {
+function FaqAnswerCard({ faqAnswer, answerKey }) {
     return (
-        <div className="faq-answer" key={ key }>
+        <div className="faq-answer" key={ answerKey }>
             <p>{ faqAnswer }</p>
         </div>
     )
