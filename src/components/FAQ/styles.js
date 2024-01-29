@@ -16,6 +16,30 @@ export const FAQContainer = styled.div`
         color: #EFECEC;
         font-size: medium;
     }
+    & .faq-search {
+        width: 100%;
+        margin: 2%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: flex-start;
+        input {
+            width: 50%;
+            height: 42px;
+            border-radius: 20px;
+            margin-right: 16px;
+            margin-left: 100px;
+            font-family: 'PT Sans Narrow', sans-serif;
+            font-size: 18px;
+            padding-left: 20px;
+        }
+        .search-button {
+            width: 22%;
+            height: 50px;
+            border-radius: 8px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+        }
+    }
 `;
 
 export const FAQCard = styled.div`
