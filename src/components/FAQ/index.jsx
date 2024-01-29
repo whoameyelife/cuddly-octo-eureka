@@ -1,21 +1,30 @@
 import React from 'react'
+import axios from 'axios'
 import { useState } from 'react'
-import { faqData } from '../../data/FAQ'
 import FaqQuestionCard from './FaqQuestionCard'
+import Spinner from './Spinner'
 import { FAQContainer } from './styles'
 
 function FAQ() {
     const [faqInput, setFaqInput] = useState('');
     const [faqs, setFaqs] = useState([]);
+    const [progress, setProgress] = useState(false);
 
     const handleChange = (search) => setFaqInput(search)
 
     const handleSearch = () => {
-        fetch('https://python-people-also-ask-restapi.onrender.com/getPaa/'+ new URLSearchParams({
-            a: faqInput
-        })).then((resp) => resp.json()).then(data => setFaqs(data))
+        setProgress(true)
+        axios.get(`https://python-people-also-ask-restapi.onrender.com/getPaa/${faqInput}`)
+        .then((resp) => {
+            setFaqs(resp.data)
+            setProgress(false);
+        }).catch(function (error) {
+            if (error.response && error.response.status === 500) {
+                setProgress(false);
+            }
+          })
     }
-    console.log(faqs)
+    console.log(faqs, 'FAQS')
     return (
         <FAQContainer>
             <div className="faq-heading">
@@ -30,13 +39,18 @@ function FAQ() {
                 </button>
             </div>
             {
-                faqs.length !==0 && faqs.map((faq, i) =>
+                progress && (
+                    <Spinner />
+                )
+            }
+            {
+                faqs && faqs.length !== 0 && faqs.map((faq, i) =>
                 <FaqQuestionCard
                     faqQuestion={ faq.question }
                     faqAnswer={ faq.answer }
                     cardKey={`${i}-${faq.question}`}
                 />
-                )
+            )
             }
         </FAQContainer>
     )
