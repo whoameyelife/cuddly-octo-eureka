@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+var decode = require('html-entities').decode;
 
 function QuizQuestion({ question }) {
+    var decodedQuestion = decode(question)
     return (
-        <div className="question-style">{question}</div>
+        <div className="question-style">{ decodedQuestion }</div>
     )
 }
 

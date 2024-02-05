@@ -92,10 +92,11 @@ export const QuestionAnswerArea = styled.div`
     flex-direction: column;
     & .question-area {
         & .question-style {
-            font-size: 45px;
+            font-size: 40px;
             font-family: 'Sen', sans-serif;
             width: 93%;
-            margin-block: 8%;
+            margin-top: 8%;
+            margin-bottom: 4%;
         }
     }
     & .answer-area {
@@ -103,21 +104,31 @@ export const QuestionAnswerArea = styled.div`
         flex-direction: column;
         width: 90%;
         margin-left: 1rem;
-        & .option-card {
-            background: #cdcdcd;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-block: 1rem;
-            & img {
-                margin-right: 3rem;
-                width: 10%;
-                margin-left: 8rem;
-            }
-            & .option-text {
-                font-size: 36px;
-                font-family: 'Sen', sans-serif;
-            }
+    }
+`;
+
+export const OptionsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    & .option-card {
+        background: #cdcdcd;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        & img {
+            margin-right: 3rem;
+            width: 10%;
         }
+        & .option-text {
+            font-size: 36px;
+            font-family: 'Sen', sans-serif;
+        }
+    }
+    & .option-decorator {
+        width: 100%;
+        height: 16px;
+        // filter: invert(54%) sepia(52%) saturate(1543%) hue-rotate(319deg) brightness(120%) contrast(87%);
+        filter: brightness(0) saturate(100%) invert(91%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(97%) contrast(79%);
     }
 `;

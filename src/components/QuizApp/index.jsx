@@ -78,7 +78,11 @@ function QuizApp() {
                             <QuestionMover type={'last'} currQuest={ currQuest } handleQuestionClick={ handleQuestionClick } />
                         )
                     }
-                        <QuestionMover type={'next'} currQuest={ currQuest } handleQuestionClick={ handleQuestionClick } />
+                    {
+                        currQuest !== 5 && (
+                            <QuestionMover type={'next'} currQuest={ currQuest } handleQuestionClick={ handleQuestionClick } />
+                        )
+                    }
                 </div>
                 <img src="https://templates.seekviral.com/qzain/quiz/Quiz17/assets/images/svg1.png" alt="arrow" />
             </div>
